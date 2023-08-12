@@ -13,45 +13,83 @@ import PrimaryButton from '../Buttons/PrimaryButton'
 import { AntTable } from '../Table/styles'
 import DropDown from '../Dropdown'
 import Pagination from '../Pagination'
+import { Tooltip } from 'antd'
 
 export default function UserManagementComponent ({ dataSource }) {
   const columns = [
     {
-      title: 'ID',
+      title: (
+        <Tooltip title='ID'>
+          <span>ID</span>
+        </Tooltip>
+      ),
       dataIndex: 'id',
       key: 'id',
-      fixed: 'left'
+      fixed: 'left',
+      render: (__, { id }) => (
+        <Tooltip title={`ID: ${id}`}>
+          <span>{id}</span>
+        </Tooltip>
+      )
     },
     {
-      title: 'NAME',
+      title: (
+        <Tooltip title='NAME'>
+          <span>NAME</span>
+        </Tooltip>
+      ),
       dataIndex: 'name',
       key: 'name',
-      fixed: 'left'
+      fixed: 'left',
+      render: (__, { name }) => (
+        <Tooltip title={`Name: ${name}`}>
+          <span>{name}</span>
+        </Tooltip>
+      )
     },
     {
-      title: 'EMAIL',
+      title: (
+        <Tooltip title='EMAIL'>
+          <span>EMAIL</span>
+        </Tooltip>
+      ),
       dataIndex: 'email',
       key: 'email',
       fixed: 'left',
       render: (__, { email }) => {
         return (
-          <div>
+          <Tooltip title={email}>
             <u>{email}</u>
-          </div>
+          </Tooltip>
         )
       }
     },
     {
-      title: 'PHONE NUMBER',
+      title: (
+        <Tooltip title='PHONE NUMBER'>
+          <span>PHONE NUMBER</span>
+        </Tooltip>
+      ),
       dataIndex: 'phone',
       key: 'phone',
-      fixed: 'left'
+      fixed: 'left',
+
+      render: (__, { phone }) => (
+        <Tooltip title={`phone number: ${phone}`}>
+          <span>{phone}</span>
+        </Tooltip>
+      )
     },
     {
-      title: 'LISENCED',
+      title: (
+        <Tooltip title='LISENCED'>
+          <span>LISENCED</span>
+        </Tooltip>
+      ),
       dataIndex: 'lisenced',
       key: 'lisenced',
       fixed: 'left',
+
       render: (__, { lisenced }) => {
         return (
           <LisenceDiv lisenced={lisenced}>{lisenced ? 'Yes' : 'No'}</LisenceDiv>
@@ -59,28 +97,46 @@ export default function UserManagementComponent ({ dataSource }) {
       }
     },
     {
-      title: 'SNAPCHAT',
+      title: (
+        <Tooltip title='SNAPCHAT'>
+          <span>SNAPCHAT</span>
+        </Tooltip>
+      ),
       dataIndex: 'snapChat',
       key: 'snapChat',
       fixed: 'left'
     },
     {
-      title: 'INSTAGRAM',
+      title: (
+        <Tooltip title='INSTAGRAM'>
+          <span>INSTAGRAM</span>
+        </Tooltip>
+      ),
       dataIndex: 'instagram',
       key: 'instagram',
-      fixed: 'left'
+      fixed: 'left',
+      width: '1rem'
     },
     {
-      title: 'TIKTOK',
+      title: (
+        <Tooltip title='TIKTOK'>
+          <span>TIKTOK</span>
+        </Tooltip>
+      ),
       dataIndex: 'tiktok',
       key: 'tiktok',
       fixed: 'left'
     },
     {
-      title: 'STATUS',
+      title: (
+        <Tooltip title='STATUS'>
+          <span>STATUS</span>
+        </Tooltip>
+      ),
       dataIndex: 'status',
       key: 'status',
       fixed: 'left',
+
       render: (__, { status }) => {
         return (
           <StatusDiv status={status}>
@@ -94,7 +150,8 @@ export default function UserManagementComponent ({ dataSource }) {
       dataIndex: 'actions',
       key: 'actions',
       fixed: 'left',
-      render: (__, { status }) => {
+
+      render: (__, {}) => {
         return <DropDown />
       }
     }
@@ -106,18 +163,18 @@ export default function UserManagementComponent ({ dataSource }) {
         <PrimaryButton text={'Export Record'} />
       </CardHeader>
       <CardBody>
-      <TableContainer>
-        <AntTable
-          columns={columns}
-          dataSource={dataSource}
-          style={{ border: 'none' }}
-          pagination={false}
-          scroll={{ x: 1200 }}
-        />
+        <TableContainer>
+          <AntTable
+            className='antTable'
+            size='middle'
+            columns={columns}
+            dataSource={dataSource}
+            pagination={false}
+          />
         </TableContainer>
       </CardBody>
       <CardFooter>
-      <Pagination/>
+        <Pagination />
       </CardFooter>
     </MainContainer>
   )

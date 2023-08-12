@@ -4,6 +4,9 @@ export const MainContainer = styled.div`
   background-color: white;
   border-radius: 7px;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
 `
 
 export const CardHeader = styled.div`
@@ -20,9 +23,13 @@ export const CardTitle = styled.div`
 
 export const LisenceDiv = styled.div`
   border-radius: 100px;
-  padding: 5px 17px;
-  width: 60px;
+  padding: 0.1rem 0.4rem;
+  width: 4rem;
   text-align: center;
+  @media (max-width: 1200px) {
+    width: 2rem;
+    padding: 0.1rem 0.3rem;
+  }
   ${props =>
     props.lisenced
       ? `background-color: #BDFED3; color: #01AB3B; border: 1px solid #01AB3B`
@@ -30,8 +37,8 @@ export const LisenceDiv = styled.div`
 `
 export const StatusDiv = styled.div`
   border-radius: 4px;
-  padding: 5px 10px;
-  width: 69px;
+  padding: 0.2rem;
+  width: 4rem;
   text-align: center;
   color: white;
 
@@ -45,10 +52,29 @@ export const CardBody = styled.div`
   margin: 2rem 0;
 `
 
-export const TableContainer = styled.div` 
-height: 30rem;
-border-bottom: 1px solid #E9EDF4;
-margin-bottom: 1rem;
+export const TableContainer = styled.div`;
+overflow-x: hidden;
+position: relative;
+  height: 30rem;
+  border-bottom: 1px solid #e9edf4;
+  padding: 1rem;
+  scrollbar-width: none; /* Hide Firefox scrollbar */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  @media (max-width: 1200px) {
+    overflow-x: auto;
+    white-space: nowrap; /* To prevent wrapping of table content */
+  }
+  .antTable{
+  border: none;
+  width: 100%;
+  position: absolute;
+  @media (max-width: 1200px) {
+    overflow-x: scroll;
+  }
+  
+  }
 `
 
 export const CardFooter = styled.div``

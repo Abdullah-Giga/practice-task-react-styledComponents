@@ -25,14 +25,17 @@ export const MainMenu = styled(Menu)`
 
   .ant-menu-item {
     font-size: 13.3px;
+    color: #74829c;
   }
 
   .ant-menu-submenu-title {
     font-size: 13.5px;
+    color: #74829c;
   }
 
   .ant-menu-item.ant-menu-item-selected,
   .ant-menu-submenu-title.ant-menu-submenu-open {
     font-size: 15px;
+    color: #74829c;
   }
 `
