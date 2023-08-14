@@ -66,7 +66,7 @@ export default function SideMenu () {
     <MainMenu
       onClick={onClick}
       style={{
-        width: '278px',
+        width: '15rem',
         border: 'none'
       }}
       defaultSelectedKeys={['1']}

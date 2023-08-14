@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import SecondaryButton from '../../Buttons/SecondaryButton'
+import { Button } from 'antd'
 
 export const CardContainer = styled.div`
   padding: 1rem;
@@ -15,16 +15,36 @@ export const CardHeader = styled.div`
 `
 
 export const BtnContainer = styled.div`
-  display: flex;
-  gap: 1rem;
+  display: none;
+  @media (min-width: 480px) {
+    display: flex;
+    gap: 1rem;
+  }
+`
+export const MobileBtnContainer = styled.div`
+  display: none;
+  @media (max-width: 480px) {
+    display: flex;
+    gap: 0.5rem;
+  }
+`
+
+export const MobileBtn = styled(Button)`
+  border: none;
+  box-shadow: 0 0 0 0;
+  font-size: 16px;
+  color: ${props => props.color};
 `
 
 export const InfoContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 1rem;
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 `
-
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
@@ -43,11 +63,16 @@ export const Heading = styled.div`
 `
 
 export const TextBox = styled.div`
-  font-size: 14px;
+  font-size: 0.8rem;
 `
 export const InviteContainer = styled.div`
   display: flex;
   padding: 1rem 0;
+  @media (max-width: 480px) {
+    border-right: none;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `
 export const CardFooter = styled.div`
   display: flex;

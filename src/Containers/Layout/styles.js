@@ -4,10 +4,13 @@ export const MainContainer = styled.div`
   display: flex;
 `
 export const SideMenuContainer = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
   flex: 1.5;
   padding-top: 5rem;
   background-color: white;
-  height: 100vh;
+  height: 90vh;
   z-index: 100;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 `

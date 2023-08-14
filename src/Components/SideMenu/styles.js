@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Menu } from 'antd'
 
 export const MainMenu = styled(Menu)`
+ 
   .ant-menu-submenu {
     background-color: white;
   }

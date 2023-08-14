@@ -9,8 +9,11 @@ import {
   Divider,
   TextBox,
   InviteContainer,
-  CardFooter
+  CardFooter,
+  MobileBtnContainer,
+  MobileBtn
 } from './styles'
+import { ExportOutlined, DeleteOutlined } from '@ant-design/icons'
 import BackButton from '../../Buttons/BackButton'
 import DeleteButton from '../../Buttons/DeleteButton'
 import PrimaryButton from '../../Buttons/PrimaryButton'
@@ -26,6 +29,14 @@ export default function UserDetailsComponent () {
           <PrimaryButton text={'Export Record'} />
           <DeleteButton />
         </BtnContainer>
+        <MobileBtnContainer>
+          <MobileBtn color={'#6c5ffc'}>
+            <ExportOutlined />
+          </MobileBtn>
+          <MobileBtn color={'#e94e51'}>
+            <DeleteOutlined />
+          </MobileBtn>
+        </MobileBtnContainer>
       </CardHeader>
       <>
         <Divider>

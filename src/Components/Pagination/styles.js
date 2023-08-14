@@ -13,16 +13,19 @@ export const AntPagination = styled(Pagination)`
     margin: 0 !important;
     padding: 0 10px;
     font-size: 16px !important;
-  }
-  
-  .ant-pagination-next{
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+    @media (max-width: 768px) {
+      font-size: 0.8rem !important;
+    }
   }
 
-  .ant-pagination-prev{
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  .ant-pagination-next {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .ant-pagination-prev {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
   }
 
   .ant-pagination-item {

@@ -8,7 +8,7 @@ export const MenuButton = styled(Button)`
   width: 30px;
   padding: 0;
   border: none;
-  background-color: #f2f2f3;
+  background-color: ${(props) => !props.header ? `#f2f2f3` : ``};
   box-shadow: 0 0 0 0;
   display: flex;
   align-items: center;
